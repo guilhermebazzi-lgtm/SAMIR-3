@@ -1,4 +1,6 @@
-/* CONFIGURAÇÕES GERAIS */
+/* =========================
+   CONFIGURAÇÕES
+========================= */
 
 * {
     margin: 0;
@@ -12,375 +14,596 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f8f3;
-    color: #1d2b20;
+    background: #f5f1e8;
+    color: #18251c;
     line-height: 1.6;
 }
 
+button,
+a {
+    font-family: inherit;
+}
 
-/* MENU */
+
+/* =========================
+   CABEÇALHO
+========================= */
 
 header {
-    background-color: #123d24;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    background: #f5f1e8;
+    border-bottom: 1px solid #d8d3c7;
 }
 
-.navbar {
-    max-width: 1100px;
+.topo {
+    max-width: 1150px;
     margin: auto;
-    padding: 15px 20px;
+
+    padding: 20px;
 
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
 }
 
-.navbar h1 {
-    font-size: 1.4rem;
-}
-
-.menu {
-    display: flex;
-    gap: 20px;
-}
-
-.menu a {
-    color: white;
+.logo {
+    color: #173d26;
     text-decoration: none;
-    font-weight: bold;
-}
-
-.menu a:hover,
-.menu a:focus {
-    color: #9bea9e;
-}
-
-
-/* HERO */
-
-.hero {
-    min-height: 80vh;
-
-    display: flex;
-    align-items: center;
-
-    background:
-        linear-gradient(
-            rgba(10, 60, 30, 0.75),
-            rgba(10, 60, 30, 0.75)
-        ),
-        linear-gradient(135deg, #2e7d32, #81c784);
-
-    color: white;
-}
-
-.hero > div {
-    max-width: 900px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-.tag {
-    color: #b9ffbd;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.hero h2 {
-    font-size: 3.5rem;
-    max-width: 750px;
-    line-height: 1.1;
-    margin: 15px 0;
-}
-
-.hero p {
-    max-width: 650px;
+    font-weight: 900;
     font-size: 1.2rem;
 }
 
+.logo span {
+    color: #78a85a;
+}
 
-/* BOTÃO */
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #344638;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #51823d;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+
+    background: #dce8d2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 80px max(20px, calc((100% - 1150px) / 2));
+}
+
+.hero-texto {
+    max-width: 700px;
+}
+
+.pequeno {
+    color: #5c8648;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.95;
+    margin: 20px 0;
+    letter-spacing: -4px;
+}
+
+.hero h1 span {
+    color: #5b8c46;
+}
+
+.hero-texto > p:not(.pequeno) {
+    max-width: 600px;
+    font-size: 1.1rem;
+    color: #405242;
+}
 
 .botao {
     display: inline-block;
 
-    margin-top: 25px;
-    padding: 12px 22px;
+    margin-top: 30px;
 
-    background-color: #9bea9e;
-    color: #123d24;
+    background: #173d26;
+    color: white;
 
-    border-radius: 8px;
+    padding: 14px 28px;
 
     text-decoration: none;
+    border-radius: 30px;
+
     font-weight: bold;
 }
 
 .botao:hover,
 .botao:focus {
-    background-color: white;
+    background: #315e3d;
+}
+
+.folha {
+    font-size: 14rem;
+    opacity: 0.8;
 }
 
 
-/* SEÇÕES */
+/* =========================
+   INTRODUÇÃO
+========================= */
 
-.secao {
-    max-width: 1100px;
+.introducao {
+    max-width: 1000px;
     margin: auto;
-    padding: 80px 20px;
+
+    padding: 100px 20px;
+
+    display: grid;
+    grid-template-columns: 120px 1fr;
+
+    gap: 50px;
 }
 
-.secao h2 {
-    font-size: 2.2rem;
+.numero {
+    color: #75a45b;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.introducao h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.introducao p:not(.numero) {
+    max-width: 700px;
+    color: #526054;
     margin-bottom: 15px;
 }
 
-.destaque {
-    max-width: none;
-    background-color: #e5f2e5;
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.secao {
+    max-width: 1150px;
+    margin: auto;
+    padding: 100px 20px;
 }
 
-.destaque > h2,
-.destaque > p,
-.destaque > .cards {
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
+.titulo-secao > p,
+.tecnologia p:first-child,
+.futuro p:first-child,
+.quiz > p:first-child,
+.acessibilidade p:first-child {
+    color: #69934f;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+
+.titulo-secao h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-top: 15px;
 }
 
 
-/* CARDS */
+/* =========================
+   CARDS
+========================= */
 
-.cards {
+.lista {
+    margin-top: 60px;
+
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
 
     gap: 20px;
-
-    margin-top: 30px;
 }
 
-.card {
-    background-color: white;
+.item {
+    background: #fffdf8;
 
-    padding: 25px;
+    padding: 35px;
 
-    border-radius: 12px;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-
-    border-left: 5px solid #3f9145;
+    border-top: 4px solid #75a45b;
 }
 
-.card span {
-    font-size: 2rem;
+.icone {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-.card h3 {
-    margin: 10px 0;
-    color: #24652e;
-}
-
-
-/* IA */
-
-.ia-box {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 30px;
-
-    margin-top: 30px;
-}
-
-.ia-box > div {
-    background-color: white;
-
-    padding: 25px;
-
-    border-radius: 12px;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.ia-box h3 {
+.item h3 {
+    font-size: 1.4rem;
     margin-bottom: 10px;
 }
 
-.ia-box li {
-    margin-left: 20px;
-}
-
-.reflexao {
-    background-color: #d8edd9;
-
-    padding: 20px;
-
-    border-radius: 10px;
-
-    margin-top: 30px;
+.item p {
+    color: #59665b;
 }
 
 
-/* QUIZ */
+/* =========================
+   TECNOLOGIA
+========================= */
+
+.tecnologia {
+    background: #173d26;
+    color: white;
+}
+
+.tecnologia-conteudo {
+    max-width: 1150px;
+    margin: auto;
+    padding: 100px 20px;
+}
+
+.tecnologia-conteudo > p:first-child {
+    color: #a8d18e;
+}
+
+.tecnologia h2 {
+    font-size: 4rem;
+    line-height: 1;
+    max-width: 700px;
+    margin: 20px 0 30px;
+}
+
+.tecnologia-conteudo > p:not(:first-child) {
+    max-width: 600px;
+    color: #cbd8ce;
+}
+
+.numeros {
+    display: flex;
+    gap: 60px;
+    margin-top: 60px;
+}
+
+.numeros div {
+    display: flex;
+    flex-direction: column;
+}
+
+.numeros strong {
+    color: #a8d18e;
+    font-size: 2.5rem;
+}
+
+.numeros span {
+    color: #d6e2d8;
+}
+
+
+/* =========================
+   FUTURO / IA
+========================= */
+
+.futuro {
+    max-width: 1150px;
+    margin: auto;
+    padding: 100px 20px;
+}
+
+.futuro-grid {
+    margin-top: 60px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+.futuro-grid > div {
+    background: #fffdf8;
+    padding: 35px;
+}
+
+.futuro-grid h3 {
+    margin-bottom: 15px;
+}
+
+.futuro-grid ul {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.futuro-grid li {
+    margin-bottom: 8px;
+}
+
+.alerta {
+    background: #eee7d8 !important;
+}
+
+
+/* =========================
+   CURIOSIDADE
+========================= */
+
+.curiosidade {
+    background: #c8dcb9;
+
+    padding: 80px 20px;
+}
+
+.curiosidade > div {
+    max-width: 800px;
+    margin: auto;
+}
+
+.curiosidade p {
+    color: #50723e;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.curiosidade h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin: 15px 0 25px;
+}
+
+.curiosidade button {
+    background: #173d26;
+    color: white;
+
+    border: none;
+
+    padding: 13px 20px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+}
+
+.curiosidade button:hover,
+.curiosidade button:focus {
+    background: #315e3d;
+}
+
+
+/* =========================
+   QUIZ
+========================= */
 
 .quiz {
+    max-width: 850px;
+    margin: auto;
+
+    padding: 100px 20px;
+
     text-align: center;
 }
 
-.opcoes {
+.quiz h2 {
+    font-size: 3rem;
+    margin: 15px 0;
+}
+
+.alternativas {
     display: grid;
 
     grid-template-columns: 1fr 1fr;
 
     gap: 15px;
 
-    max-width: 700px;
-
-    margin: 30px auto;
+    margin: 40px 0 25px;
 }
 
-.opcoes button,
-.acessibilidade-botoes button {
-    padding: 15px;
+.alternativas button {
+    background: white;
+    color: #203526;
 
-    border: none;
+    border: 2px solid #d5dacf;
+
+    padding: 18px;
+
     border-radius: 8px;
 
-    background-color: #24652e;
-    color: white;
-
     cursor: pointer;
-
-    font-size: 1rem;
 }
 
-.opcoes button:hover,
-.opcoes button:focus,
-.acessibilidade-botoes button:hover,
-.acessibilidade-botoes button:focus {
-    background-color: #17461f;
+.alternativas button:hover,
+.alternativas button:focus {
+    border-color: #5f8d4e;
+    background: #edf5e9;
 }
 
 #resultado {
-    font-size: 1.2rem;
-    font-weight: bold;
     min-height: 30px;
+    font-weight: bold;
 }
 
 
-/* ACESSIBILIDADE */
+/* =========================
+   ACESSIBILIDADE
+========================= */
 
 .acessibilidade {
-    background-color: #123d24;
+    background: #e3eadf;
+
+    padding: 70px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.acessibilidade > div {
+    max-width: 600px;
+    margin-left: max(0px, calc((100% - 1100px) / 2));
+}
+
+.acessibilidade h2 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+.controles {
+    display: flex;
+    gap: 10px;
+    margin-right: max(0px, calc((100% - 1100px) / 2));
+}
+
+.controles button {
+    background: #173d26;
     color: white;
 
-    max-width: none;
+    border: none;
 
-    text-align: center;
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
 }
 
-.acessibilidade-botoes {
-    display: flex;
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-
-    margin-top: 25px;
+.controles button:hover,
+.controles button:focus {
+    background: #315e3d;
 }
 
 
-/* FOOTER */
+/* =========================
+   RODAPÉ
+========================= */
 
 footer {
-    background-color: #0b2917;
-
-    color: white;
+    background: #10271a;
+    color: #dce8dd;
 
     text-align: center;
 
-    padding: 40px 20px;
+    padding: 60px 20px;
+}
+
+.footer-logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
 footer p {
-    margin-top: 10px;
+    margin: 5px;
 }
 
-.creditos {
-    font-size: 0.9rem;
-    color: #c7d8ca;
+footer strong {
+    color: #a8d18e;
+}
+
+.linha {
+    width: 80px;
+    height: 2px;
+
+    background: #5e8b49;
+
+    margin: 25px auto;
+}
+
+footer small {
+    color: #94a599;
 }
 
 
-/* ACESSIBILIDADE - FONTE */
+/* =========================
+   ACESSIBILIDADE - FONTE
+========================= */
 
 .fonte-grande {
     font-size: 1.2em;
 }
 
 
-/* ACESSIBILIDADE - CONTRASTE */
+/* =========================
+   RESPONSIVIDADE
+========================= */
 
-.contraste {
-    background-color: #000 !important;
-    color: #fff !important;
-}
+@media (max-width: 800px) {
 
-.contraste header,
-.contraste footer,
-.contraste .acessibilidade {
-    background-color: #000 !important;
-    color: #fff !important;
-}
-
-.contraste .card,
-.contraste .ia-box > div {
-    background-color: #111 !important;
-    color: #fff !important;
-    border: 1px solid white;
-}
-
-.contraste a {
-    color: #ffff00 !important;
-}
-
-
-/* RESPONSIVIDADE */
-
-@media (max-width: 768px) {
-
-    .navbar {
+    .topo {
         flex-direction: column;
         gap: 15px;
     }
 
-    .menu {
+    nav {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .folha {
+        display: none;
+    }
+
+    .introducao {
+        grid-template-columns: 1fr;
         gap: 10px;
     }
 
-    .hero h2 {
-        font-size: 2.5rem;
+    .introducao h2 {
+        font-size: 2.3rem;
     }
 
-    .cards {
+    .lista {
         grid-template-columns: 1fr;
     }
 
-    .ia-box {
+    .tecnologia h2 {
+        font-size: 3rem;
+    }
+
+    .numeros {
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .futuro-grid {
         grid-template-columns: 1fr;
     }
 
-    .opcoes {
+    .quiz h2 {
+        font-size: 2.3rem;
+    }
+
+    .alternativas {
         grid-template-columns: 1fr;
+    }
+
+    .acessibilidade {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .acessibilidade > div,
+    .controles {
+        margin: 0;
     }
 
 }
